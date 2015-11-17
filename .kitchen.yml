@@ -1,0 +1,17 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: debian-7.9
+    driver:
+      vagrantfile_erb: Vagrantfile.erb
+
+suites:
+  - name: default
+    run_list:
+      - recipe[hello_world::default]
+    attributes:
